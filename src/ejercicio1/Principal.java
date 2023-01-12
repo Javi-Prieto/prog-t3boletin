@@ -22,6 +22,7 @@ public class Principal {
 			System.out.println("2. Listar productos");
 			System.out.println("3. Calcular PPV");
 			System.out.println("4. Comprobar Fragilidad");
+			System.out.println("5. Buscar producto por nombre");
 			System.out.println("0. Salir");
 			System.out.println("******************************************");
 			System.out.println("¿Qué desea hacer?");
@@ -60,6 +61,12 @@ public class Principal {
 					}else {
 						System.out.println("El producto no es frágil");
 					}
+					break;
+				case 5:
+					System.out.println("Diga el nombre");
+					name = Leer.dato();
+					System.out.println("El producto es: ");
+					System.out.println(gest.findByName(name));
 					break;
 				case 0:
 					System.out.println("Gracias por usar el programa");

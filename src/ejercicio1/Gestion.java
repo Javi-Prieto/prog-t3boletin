@@ -40,6 +40,21 @@ public class Gestion {
 			return -1;		
 		}
 	}
+	public Producto findByName(String name) {
+		int i = 0;
+		boolean encontrado = false;
+		while(i < lista.length && !encontrado) {
+			Producto deLista = lista[i];
+			if(deLista.getNombre().equalsIgnoreCase(name)) {
+				encontrado = true;
+			}else {
+				i++;
+			}
+			
+		}
+		return lista[i];
+	}
+	
 
 	public void imprimirTodosLosProdctos() {
 		for(int i =0; i < lista.length; i++) {
