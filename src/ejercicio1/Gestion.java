@@ -1,5 +1,57 @@
 package ejercicio1;
 
-public class Gestion {
 
+public class Gestion {
+	Producto [] lista;
+
+	public Gestion(Producto[] lista) {
+		super();
+		this.lista = lista;
+	}
+	
+	public void addProducts(Producto p, int pos) {
+		lista[pos] = p;
+	}
+	public double calcularPPV(String codigo) {
+		return lista[findById(codigo)].getPrecioFabrica() + (lista[findById(codigo)].getPrecioFabrica()*0.5);
+	}
+	public boolean comprobarFragil(String codigo) {
+		if(lista[findById(codigo)].isFragil()) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public int findById(String codigo) {
+		int i = 0;
+		boolean encontrado = false;
+		while(i < lista.length && !encontrado) {
+			Producto deLista = lista[i];
+			if(deLista.getCodProd().equalsIgnoreCase(codigo)) {
+				encontrado = true;
+			}else {
+				i++;
+			}
+		}
+		if(encontrado) {
+			return i;
+		}else {
+			return -1;		
+		}
+	}
+
+	public void imprimirTodosLosProdctos() {
+		for(int i =0; i < lista.length; i++) {
+			System.out.println((i+1) + "- " + lista[i]);
+		}
+	}
+	public boolean addFragil(int pos, int fr) {
+		if(fr == 1) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
 }
