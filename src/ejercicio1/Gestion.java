@@ -40,21 +40,30 @@ public class Gestion {
 			return -1;		
 		}
 	}
-	public Producto findByName(String name) {
+	public Producto[] findByName(String name) {
 		int i = 0;
-		boolean encontrado = false;
-		while(i < lista.length && !encontrado) {
+		Producto[] mismoNombre = new Producto [lista.length];
+		while(i < lista.length) {
 			Producto deLista = lista[i];
 			if(deLista.getNombre().equalsIgnoreCase(name)) {
-				encontrado = true;
+				mismoNombre[i] = deLista;
+				i++;
 			}else {
 				i++;
 			}
 			
 		}
-		return lista[i];
+		return mismoNombre;
 	}
-	
+	public void imprimirMismoNombre(String name) {
+		for(int i = 0; i < findByName(name).length; i++) {
+			if(findByName(name)[i] == null) {
+				
+			}else {
+				System.out.println((i +1)+". "+ findByName(name)[i]);
+			}
+		}
+	}
 
 	public void imprimirTodosLosProdctos() {
 		for(int i =0; i < lista.length; i++) {

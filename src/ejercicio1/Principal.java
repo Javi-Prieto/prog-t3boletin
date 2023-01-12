@@ -65,8 +65,8 @@ public class Principal {
 				case 5:
 					System.out.println("Diga el nombre");
 					name = Leer.dato();
-					System.out.println("El producto es: ");
-					System.out.println(gest.findByName(name));
+					System.out.println("Los productos son: ");
+					gest.imprimirMismoNombre(name);
 					break;
 				case 0:
 					System.out.println("Gracias por usar el programa");
