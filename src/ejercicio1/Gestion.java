@@ -12,11 +12,13 @@ public class Gestion {
 	public void addProducts(Producto p, int pos) {
 		lista[pos] = p;
 	}
-	public double calcularPPV(String codigo) {
-		return lista[findById(codigo)].getPrecioFabrica() + (lista[findById(codigo)].getPrecioFabrica()*0.5);
+	
+	public double calcularPPV(int pos) {
+		return lista[pos].getPrecioFabrica() + (lista[pos].getPrecioFabrica()*0.5);
 	}
-	public boolean comprobarFragil(String codigo) {
-		if(lista[findById(codigo)].isFragil()) {
+	
+	public boolean comprobarFragil(int pos) {
+		if(lista[pos].isFragil()) {
 			return true;
 		}else {
 			return false;

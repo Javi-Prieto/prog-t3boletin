@@ -51,12 +51,12 @@ public class Principal {
 					gest.imprimirTodosLosProdctos();
 					System.out.println("Introduzca el código del producto que desea calcular el PPV");
 					cod = Leer.dato();
-					System.out.printf("El PPV del producto es: %.2f \n", gest.calcularPPV(cod));
+					System.out.printf("El PPV del producto es: %.2f \n", gest.calcularPPV(gest.findById(cod)));
 					break;
 				case 4:
 					System.out.println("Introduzca el código del producto que desea comprobar su fragilidad");
 					cod = Leer.dato();
-					if(gest.comprobarFragil(cod)) {
+					if(gest.comprobarFragil(gest.findById(cod))) {
 						System.out.println("El producto es frágil");
 					}else {
 						System.out.println("El producto no es frágil");
