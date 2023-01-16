@@ -38,6 +38,25 @@ public class Principal {
 			System.out.println("---------------------------------------------");
 			System.out.println("¿Qué desea hacer?");
 			op = Leer.datoInt();
+			switch (op) {
+				case 1:
+					ti.mostrarObjetos();
+					System.out.println("Indique el número del producto");
+					tam = Leer.datoInt();
+					System.out.printf("El precio del producto es %.2f \n", ti.precioFinal(tam));
+					break;
+				case 2:
+					System.out.printf("El precio total de los productos es %.2f \n", ti.precioTotal());
+					break;
+				case 3:
+					System.out.printf("La media de precios de los productos es %.2f \n", ti.mediaPrecio());
+					break;
+				case 0:
+					System.out.println("Gracias por usar el programa");
+					break;
+				default:
+					System.out.println("Número incorrecto");
+			}
 		}while(op != 0);
 
 	}

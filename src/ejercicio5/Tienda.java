@@ -14,7 +14,7 @@ public class Tienda {
 	
 	//Methods
 	public double precioFinal(int pos) {
-		return lista[pos].precioFinal(lista[pos].getConsumoEnergetico());
+		return lista[pos-1].precioFinal(lista[pos-1].getConsumoEnergetico());
 	}
 	public double precioTotal() {
 		double precioT = 0;
