@@ -15,11 +15,14 @@ public class Gimnasio {
 		int i=0;
 		boolean encontrado = false;
 		while (i < lista.length && !encontrado) {
-			if(lista[0].getDni().equalsIgnoreCase(dni)) {
-				encontrado = true;
-			}else {
-				i ++;
-			}
+			if(lista[i].getDni() == null) {
+				i++;
+			}else if(lista[i].getDni().equalsIgnoreCase(dni)) {
+					encontrado = true;
+				}else {
+					i ++;
+				}
+			
 		}
 		return i;
 	}
@@ -39,5 +42,12 @@ public class Gimnasio {
 		}else {
 			System.out.println("Cliente inexistente");
 		}
+	}
+	public double calcularMediaIMC() {
+		double media = 0;
+		for(int i = 0; i < lista.length; i++) {
+			media += calcularIMC(lista[i].getDni());
+		}
+		return media / lista.length;
 	}
 }
