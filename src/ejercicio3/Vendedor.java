@@ -23,13 +23,13 @@ public class Vendedor {
 
 	//Methods
 	public int comprobarMoviles() {
-		int i;
-		for( i = 0; i < lista.length; i++) {
+		int cont = 0;
+		for(int i = 0; i < lista.length; i++) {
 			if(lista[i].isVendido()) {
-				i++;
+				cont ++;
 			}
 		}
-		return i;
+		return cont;
 	}
 	public void imprimirMov() {
 		if(comprobarMoviles() == 0) {
